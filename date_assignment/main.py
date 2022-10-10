@@ -34,20 +34,25 @@ def check_date(m, d, y):
 
 n = 1
 
-# array input similar method
-dates = [x if x.isdigit() else "illegal" for x in stdin.readlines() if x.isdigit()]
 
-print(dates)
+dates = [date for date in stdin.readlines()]
+prev_illegal = not check_date(dates[0][2:4],dates[0][:2],dates[0][4:-1]) or not dates[0][:-1].isdigit()
 
 for date in dates[1:]:
-    if date == "illegal":
-        print("Line {}: illegal".format(n))
-    elif check_date(date[2:4],date[:2],date[4:]):
-        prev_date = date[n-1]
 
-        if datetime.strptime(date, "%d%m%Y").date() < datetime.strptime(prev_date, "%d%m%Y").date():
-            print("Line {}: older".format(n))
+    if not date[:-1].isdigit():
+        print("Line {}: Illegal".format(n+1))
+        prev_illegal = True
+    
+    elif check_date(date[2:4],date[:2],date[4:-1]) and int(date[4:-1])>1600:
+        prev_date = dates[n-1]
+
+        if not prev_illegal and datetime.datetime.strptime(date[:-1], "%d%m%Y").date() < datetime.datetime.strptime(prev_date[:-1], "%d%m%Y").date():
+            print("Line {}: Older".format(n+1))
+        
+        prev_illegal = False
     else:
-        dates[n] = "illegal"
+        print("Line {}: Illegal".format(n+1))
+        prev_illegal = True
     
     n += 1
