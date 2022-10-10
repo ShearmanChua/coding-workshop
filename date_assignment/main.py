@@ -38,6 +38,9 @@ n = 1
 dates = [date for date in stdin.readlines()]
 prev_illegal = not check_date(dates[0][2:4],dates[0][:2],dates[0][4:-1]) or not dates[0][:-1].isdigit()
 
+if prev_illegal:
+     print("Line {}: Illegal".format(n))
+
 for date in dates[1:]:
 
     if not date[:-1].isdigit():
