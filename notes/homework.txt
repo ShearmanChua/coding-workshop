@@ -1,0 +1,52 @@
+Homework (written)
+==================
+
+Email homework answers in text doc to your respective tutors (contacts are listed below). 
+Please do so on time - don't be tardy.
+All homework will be uploaded to the Code Workshop For Students eWP folder.
+Refer to timetable.xls for the deadlines
+
+
+1) Written assignment 1: 
+What in the reading list resonates the most with you? Pick up to 10 most useful tips/top takeaways you would recommend to other programmers or you would like to remember. Summarise in one liners (optionally with a short quote or summary after it and stating its source). Keep the write-up to within one page.
+Attach the file <your name>_wa_1.rtf in your email to your tutor.
+
+2) Quiz: fix bad code in your chosen work language/s (given on Day 2)
+Rewrite the bad code to improve it, together with a short explanation of what is the problem with the code
+and what tool or method (eg. which static test tool, custom script or manual review) can be used to find such problems.
+Attach the file <your name>_ans_bad_code_<lang>.rtf in your email to your tutor.
+
+3) Written assignment 2 and 3 (given on Day 4)
+Code review notes
+Attach the file <your name>_wa_2_and_3.rtf in your email to your tutor.
+ 
+
+Hackerrank (submit online)
+==========
+1) www.hackerrank.com/ws-practice (no scores)
+2) www.hackerrank.com/ws-exercises
+3) www.hackerrank.com/ws-test
+4) Bonus challenge: only open to those who solve all ws-test problems before 8am Day 9, specifics will be given to those eligible
+
+
+Other links to bookmark:
+=======================
+- Skype link for lectures: accept invite from Raj
+
+- Student files in eWorkplace:
+https://team.eworkplace.dsta.gov.sg/entity/08/Documents/10 Training and Devt/13 zzTest/Code Workshop/For Students Oct 2022
+
+- Post-course survey: Raj will email link on last day of workshop
+
+- Telegram students/tutors chat grp: Raj will invite/add
+
+- Slack channel for forum discussions:
+coding-workshop channel at https://app.slack.com/client/T01QVCW883T/C01QVD2CT41
+Join C3D Dev group first at https://join.slack.com/t/c3ddevs/shared_invite/zt-qxvztq3p-2X2sC41f10Wa03o5DckRxA
+
+- Internet link for Day 4 morning demo: https://meet.google.com/hob-kpts-yen (Desmond Koh to confirm)
+
+
+
+
+

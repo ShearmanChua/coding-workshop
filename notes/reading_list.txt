@@ -1,0 +1,119 @@
+
+More suggested reading and watching:
+
+You may also search for "Better Code" or "Software Testing Tips" on google or youtube to research on your own.
+
+* Books to read
+============================================
+- The Art of Readable Code by Dustin Boswell and Trevor Foucher, 2012
+- Code Complete 2 by Steve McConnell
+- Clean Code by Robert Martin
+- A Philosophy of Software Design by John Ousterhout
+- 97 Things Every Programmer Should Know by Kevlin Henney
+- The Pragmatic Programmer by Andrew Hunt and David Thomas
+- The Practice of Programming by Brian Kernighan and Rob Pike, 1999
+
+-------------------------------------------------
+
+Websites to read
+========================================
+* Principles of Automated Testing
+https://www.lihaoyi.com/post/PrinciplesofAutomatedTesting.html
+
+- Google's blogs on testing
+https://testing.googleblog.com/
+
+* Code Review Best Practices
+https://trishagee.github.io/presentation/code_review_best_practice/
+
+- A new way of measuring understandability
+https://www.sonarsource.com/docs/CognitiveComplexity.pdf
+
+- Reading List for the mindful Software Engineer
+https://gerlacdt.github.io/posts/classic-papers/
+
+* On pair programming
+https://martinfowler.com/articles/on-pair-programming.html 
+
+- Software Engineering at Google
+https://abseil.io/resources/swe-book/html/toc.html
+13 Style Guides and Rules
+14 Code Review
+16 Testing Overview
+17 Unit Testing
+26 Static Analysis
+
+-------------------------------------------------
+
+Videos to watch (if you prefer videos to reading)
+=================================================
+
+1) Write BETTER Code! 7 Tips to Improve Your Programming Skills
+https://www.youtube.com/watch?v=vfqvzgkYYF0
+
+2) How to write better code (3 tips)
+https://youtu.be/sg1a_3KvNSw
+
+3) Writing Readable Code
+https://www.youtube.com/watch?v=SPlS4kW0UbE
+Formatting, Commenting, Naming things, Using booleans as arguments is bad
+
+4) 10 Tips For Clean Code
+https://www.youtube.com/watch?v=UjhX2sVf0eg
+
+5) 5 Ways to Improve Your Code by Dave Farley
+https://youtu.be/5z5eGcmNikQ
+
+6) Code Checking Automation (property-based testing)
+https://www.youtube.com/watch?v=AfaNEebCDos
+
+7) Code Review Best Practices 
+https://www.youtube.com/watch?v=a9_0UUUNt-Y
+
+8) Twelve Ways to Make Code Suck Less
+https://www.youtube.com/watch?v=nVZE53IYi4w
+
+9) Learning from your bugs by Henrik Warne
+https://www.youtube.com/watch?v=aR3t2ADofQg
+
+10) Llewellyn Falco: ApprovalTests
+https://www.youtube.com/watch?v=fCyu2ebXA8o
+
+11) Pair Programming
+https://youtu.be/aItVJprLYkg
+
+12) How Functional Programming Can Make You A Better Developer
+https://youtu.be/EqO4TcNLjl0 
+
+13) Scott Meyers: Designing Interfces
+https://www.youtube.com/watch?v=TdajK_SXwoc
+
+
+-------------------------------------------------
+
+Web pages to read for summaries
+===========================================
+1) 6 simple tips for writing clean code
+https://blog.alexdevero.com/6-simple-tips-writing-clean-code/ 
+
+2) Clean Code summary
+https://dzone.com/articles/clean-code-summary-and-key-points 
+
+3) Code Complete checklists for coding
+http://www.matthewjmiller.net/files/cc2e_checklists.pdf
+
+4) The Art of Readable Code - Key Ideas
+http://stephenhouser.com/blog/2013/02-15-the-art-of-readable-code.html
+
+-------------------------------------------------
+Extras
+======
+- How to Write Good Programs: A Guide for Students by Perdita Stevens
+- Lehman's Laws of Software Evolution
+
+ 
+
+
+
+
+
