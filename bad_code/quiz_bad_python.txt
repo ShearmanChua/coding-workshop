@@ -191,7 +191,7 @@ Original:
 
 Refactored/Fixed:
 
-<your code here>
+cumulative_scores = [sum(i) for i in zip(term_1_scores, term_2_scores )]  
 
 =========================================== PROBLEM 10 ============================================
 
@@ -208,7 +208,8 @@ Original:
 
 Refactored/Fixed:
 
-<your code here>
+if e in ls:
+    do_something()
 
 =========================================== PROBLEM 11 ============================================
 
@@ -227,7 +228,7 @@ Original:
 
 Refactored/Fixed:
 
-<your code here>
+parity = EVEN if number % 2 == 0 else ODD
 
 =========================================== PROBLEM 12 ============================================
 
@@ -247,7 +248,8 @@ Original:
 
 Refactored/Fixed:
 
-<your code here>
+valid_entries = [entry for entry in ls if is_valid(entry)] 
+do_something(valid_entries)
 
 =========================================== PROBLEM 13 ============================================
 
@@ -268,7 +270,7 @@ Original:
 
 Refactored/Fixed:
 
-<your code here>
+validity_statements = [VALID if is_valid(entry) else INVALID for entry in ls] 
 
 =========================================== PROBLEM 14 ============================================
 

@@ -1,5 +1,10 @@
-def get_coordinates():
-    return(1,2,3)
+VALID = "valid"
+INVALID = "invalid"
 
-x, y, z = get_coordinates()
-print(x, y, z)
+def is_valid(entry):
+    return len(entry) > 0
+
+ls = ["apple","pear","","orange"]
+
+validity_statements = [VALID if is_valid(entry) else INVALID for entry in ls] 
+print(validity_statements)
