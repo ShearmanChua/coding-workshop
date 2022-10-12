@@ -1,10 +1,9 @@
-VALID = "valid"
-INVALID = "invalid"
+strings = ["apple","pear","orange","-123?"]
 
 def is_valid(entry):
-    return len(entry) > 0
+    return entry.isalnum()
 
-ls = ["apple","pear","","orange"]
+def get_valid_entries(ls):
+    return [entry for entry in ls if is_valid(entry)]
 
-validity_statements = [VALID if is_valid(entry) else INVALID for entry in ls] 
-print(validity_statements)
+print(get_valid_entries(strings))

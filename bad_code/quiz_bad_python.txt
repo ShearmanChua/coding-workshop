@@ -289,7 +289,7 @@ Original:
 
 Refactored/Fixed:
 
-<your code here>
+concatenated = "".join(ls)
 
 =========================================== PROBLEM 15 ============================================
 
@@ -306,7 +306,8 @@ Original:
 
 Refactored/Fixed:
 
-<your code here>
+working_dict = d.copy()
+do_something_mutative(working_dict)
 
 =========================================== PROBLEM 16 ============================================
 
@@ -326,7 +327,8 @@ Original:
 
 Refactored/Fixed:
 
-<your code here>
+def is_valid(option):                                                                                                                                                       
+    return option in [1, 2, 40, 102, 144] 
 
 =========================================== PROBLEM 17 ============================================
 
@@ -353,7 +355,14 @@ Original:
 
 Refactored/Fixed:
 
-<your code here>
+def insert_name_and_age(name, age, json_dict):
+    json_dict['profile'] = {
+        'name': name,
+        'age': age
+    }
+
+def get_name_and_age(json_dict):
+    return json_dict['profile']['name'] , json_dict['profile']['age']
 
 =========================================== PROBLEM 18 ============================================
 
@@ -374,4 +383,5 @@ Original:
 
 Refactored/Fixed:
 
-<your code here>
+def get_valid_entries(ls):
+    return [entry for entry in ls if is_valid(entry)]
