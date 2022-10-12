@@ -172,8 +172,8 @@ Original:
 
 Refactored/Fixed:
 
-for index,item in enumerate(ls):                                                                |
-    |     do_something(index, item)   
+for index,item in enumerate(ls):
+    do_something(index, item)   
 
 =========================================== PROBLEM 09 ============================================
 
