@@ -3,7 +3,8 @@ import re
 
 def check_valid_string(input_text):
     valid_str = re.compile(r'.*\(\).*', re.IGNORECASE)
-    if (valid_str.match(input_text) and "() ->" not in input_text) or "\" + \"" in input_text or (not input_text.split(",")[-1].strip().isalnum() and "() ->" not in input_text):
+    # print(input_text.split("\""))
+    if (valid_str.match(input_text) and "() ->" not in input_text) or len(input_text.split("\"")) > 4 or (not input_text.split(",")[-1].strip().isalnum() and "() ->" not in input_text):
         return True
     else:
         return False
@@ -24,5 +25,7 @@ for line in range(0,len(lines)):
         complete_line = complete_line.replace("\n","")
         complete_line = complete_line[complete_line.find("logger.debug(")+13:complete_line.find(";") - 1]
         
+        # print(complete_line)
         if check_valid_string(complete_line):
            print(line + 1)
+        
