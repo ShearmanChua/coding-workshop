@@ -1,0 +1,387 @@
+========================================== INSTRUCTIONS ===========================================
+
+For each problem, you are given a snippet of code (under "Original:") that can be improved in some
+way - e.g., can be more efficient, can be more succinct, is not conforming to best practices etc.
+
+Replace <your code here> with how you would refactor the code.
+
+Be sure to preserve the INTENT of the code. That is to say, there is nothing wrong with WHAT the
+code is trying to achieve, and you should not be changing it. What needs to be improved is HOW the
+code is achieving it.
+
+The assumptions you can make are detailed under "Setup:". A variable will not be None unless
+explicitly stated.
+
+=========================================== PROBLEM 01 ============================================
+
+Setup:
+
+    `previous` and `current` are comparable objects, and `previous` can be None.
+
+Original:
+
+    +---------------------------------------------------------------------------------------------+
+    | if current < previous or previous == None:                                                  |
+    |     do_something()                                                                          |
+    +---------------------------------------------------------------------------------------------+
+
+Refactored/Fixed:
+
+analyser used: pylint
+
+if previous is None or current < previous:
+    do_something()
+
+- In the event 'previous' is None, it may result in an error if we try to compare it with 'current' of a non-None object type, therefore
+  we should check if previous is None as the first condition (manual)
+- Comparison 'previous == None' should be 'previous is None' (singleton-comparison) (caught by pylint)
+
+=========================================== PROBLEM 02 ============================================
+
+Setup:
+
+    `s` is a string or None
+
+Original:
+
+    +---------------------------------------------------------------------------------------------+
+    | if s != '' and s is not None:                                                               |
+    |     do_something()                                                                          |
+    +---------------------------------------------------------------------------------------------+
+
+Refactored/Fixed:
+
+analyser used: pylint
+
+if s:
+    do_something()
+
+- able to check both None and empty string condition without the need for 2 conditional operators. (manual)
+
+=========================================== PROBLEM 03 ============================================
+
+Setup:
+
+    `ls` is an arbitrary list.
+
+Original:
+
+    +---------------------------------------------------------------------------------------------+
+    | if len(ls) > 0:                                                                             |
+    |     do_something()                                                                          |
+    +---------------------------------------------------------------------------------------------+
+
+Refactored/Fixed:
+
+analyser used: pylint
+
+if ls:
+    do_something()
+
+=========================================== PROBLEM 04 ============================================
+
+Setup:
+
+    `ls` is some arbitrary list of integers.
+
+Original:
+
+    +---------------------------------------------------------------------------------------------+
+    | scaled = []                                                                                 |
+    | for i in range(len(ls)):                                                                    |
+    |     scaled_value = ls[i] * 10                                                               |
+    |     scaled.append(scaled_value)                                                             |
+    +---------------------------------------------------------------------------------------------+
+
+Refactored/Fixed:
+
+scaled = [num * 10 for num in ls]
+
+=========================================== PROBLEM 05 ============================================
+
+Setup:
+
+    `ls` is an arbitrary list of strings.
+
+Original:
+
+    +---------------------------------------------------------------------------------------------+
+    | no_empty_strings = True                                                                     |
+    | for s in ls:                                                                                |
+    |     if not s:                                                                               |
+    |         no_empty_strings = False                                                            |
+    | if no_empty_strings:                                                                        |
+    |     do_something(ls)                                                                        |
+    +---------------------------------------------------------------------------------------------+
+
+Refactored/Fixed:
+if not min(ls, key=len):
+    do_something(ls)
+
+=========================================== PROBLEM 06 ============================================
+
+Setup:
+
+    `ls` is an arbitrary list of elements, and `i` and `j` are integers, guaranteed to be more than
+    or equal to 0 and less than len(ls).
+
+Original:
+
+    +---------------------------------------------------------------------------------------------+
+    | hold = ls[i]                                                                                |
+    | ls[i] = ls[j]                                                                               |
+    | ls[j] = hold                                                                                |
+    +---------------------------------------------------------------------------------------------+
+
+Refactored/Fixed:
+
+ls[i], ls[j] = ls[j], ls[i]
+
+=========================================== PROBLEM 07 ============================================
+
+Setup:
+
+    Function `get_coordinates()` returns a 3-tuple of numerical values, corresponding to x, y and z
+    coordinates.
+
+Original:
+
+    +---------------------------------------------------------------------------------------------+
+    | tup = get_coordinates()                                                                     |
+    | x = tup[0]                                                                                  |
+    | y = tup[1]                                                                                  |
+    | z = tup[2]                                                                                  |
+    +---------------------------------------------------------------------------------------------+
+
+Refactored/Fixed:
+
+x, y, z = get_coordinates()
+
+=========================================== PROBLEM 08 ============================================
+
+Setup:
+
+    `ls` is an arbitrary list of objects.
+
+Original:
+
+    +---------------------------------------------------------------------------------------------+
+    | for index in range(len(ls)):                                                                |
+    |     do_something(index, ls[index])                                                          |
+    +---------------------------------------------------------------------------------------------+
+
+Refactored/Fixed:
+
+for index,item in enumerate(ls):
+    do_something(index, item)   
+
+=========================================== PROBLEM 09 ============================================
+
+Setup:
+
+    `term_1_scores` and `term_2_scores` are lists of numerical values, guaranteed to be of the same
+    size.
+
+Original:
+
+    +---------------------------------------------------------------------------------------------+
+    | cumulative_scores = []                                                                      |
+    | for i in range(len(term_1_scores)):                                                         |
+    |     cumulative_scores.append(term_1_scores[i] + term_2_scores[i])                           |
+    +---------------------------------------------------------------------------------------------+
+
+Refactored/Fixed:
+
+cumulative_scores = [sum(i) for i in zip(term_1_scores, term_2_scores )]  
+
+=========================================== PROBLEM 10 ============================================
+
+Setup:
+
+    `ls` is an arbitrary list of strings and `e` is a string.
+
+Original:
+
+    +---------------------------------------------------------------------------------------------+
+    | if any(elem == e for elem in ls):                                                           |
+    |     do_something()                                                                          |
+    +---------------------------------------------------------------------------------------------+
+
+Refactored/Fixed:
+
+if e in ls:
+    do_something()
+
+=========================================== PROBLEM 11 ============================================
+
+Setup:
+
+    `number` is an arbitrary integer, and `EVEN` and `ODD` are arbitrary objects.
+
+Original:
+
+    +---------------------------------------------------------------------------------------------+
+    | if number % 2 == 0:                                                                         |
+    |     parity = EVEN                                                                           |
+    | else:                                                                                       |
+    |     parity = ODD                                                                            |
+    +---------------------------------------------------------------------------------------------+
+
+Refactored/Fixed:
+
+parity = EVEN if number % 2 == 0 else ODD
+
+=========================================== PROBLEM 12 ============================================
+
+Setup:
+
+    `ls` is an arbitrary list.
+
+Original:
+
+    +---------------------------------------------------------------------------------------------+
+    | valid_entries = []                                                                          |
+    | for entry in ls:                                                                            |
+    |     if is_valid(entry):                                                                     |
+    |         valid_entries.append(entry)                                                         |
+    | do_something(valid_entries)                                                                 |
+    +---------------------------------------------------------------------------------------------+
+
+Refactored/Fixed:
+
+valid_entries = [entry for entry in ls if is_valid(entry)] 
+do_something(valid_entries)
+
+=========================================== PROBLEM 13 ============================================
+
+Setup:
+
+    `ls` is an arbitrary list, and `VALID` and `INVALID` are arbitrary strings.
+
+Original:
+
+    +---------------------------------------------------------------------------------------------+
+    | validity_statements = []                                                                    |
+    | for entry in ls:                                                                            |
+    |    if is_valid(entry):                                                                      |
+    |        validity_statements.append(VALID)                                                    |
+    |    else:                                                                                    |
+    |        validity_statements.append(INVALID)                                                  |
+    +---------------------------------------------------------------------------------------------+
+
+Refactored/Fixed:
+
+validity_statements = [VALID if is_valid(entry) else INVALID for entry in ls] 
+
+=========================================== PROBLEM 14 ============================================
+
+Setup:
+
+    `ls` is an arbitrary list of strings.
+
+Original:
+
+    +---------------------------------------------------------------------------------------------+
+    | concatenated = ""                                                                           |
+    | for string in ls:                                                                           |
+    |     concatenated = concatenated + string                                                    |
+    +---------------------------------------------------------------------------------------------+
+
+Refactored/Fixed:
+
+concatenated = "".join(ls)
+
+=========================================== PROBLEM 15 ============================================
+
+Setup:
+
+    `d` is an arbitrary dictionary.
+
+Original:
+
+    +---------------------------------------------------------------------------------------------+
+    | working_dict = { k: v for k, v in d.items() }                                               |
+    | do_something_mutative(working_dict)                                                         |
+    +---------------------------------------------------------------------------------------------+
+
+Refactored/Fixed:
+
+working_dict = d.copy()
+do_something_mutative(working_dict)
+
+=========================================== PROBLEM 16 ============================================
+
+Setup:
+
+    `option` is guaranteed to be an integer.
+
+Original:
+
+    +---------------------------------------------------------------------------------------------+
+    | def is_valid(option):                                                                       |
+    |     if option == 1 or option == 2 or option == 40 or option == 102 or option == 144:        |
+    |         return True                                                                         |
+    |     else:                                                                                   |
+    |         return False                                                                        |
+    +---------------------------------------------------------------------------------------------+
+
+Refactored/Fixed:
+
+def is_valid(option):                                                                                                                                                       
+    return option in [1, 2, 40, 102, 144] 
+
+=========================================== PROBLEM 17 ============================================
+
+Setup:
+
+    `json_dict` is guaranteed to be a dictionary. You do not need to be concerned about handling 
+    nonexistent dictionary keys or overwriting dictionary keys.
+
+Original:
+
+    +---------------------------------------------------------------------------------------------+
+    | def insert_name_and_age(name, age, json_dict):                                              |
+    |     json_dict['profile'] = {                                                                |
+    |         'name': name,                                                                       |
+    |         'age': age                                                                          |
+    |     }                                                                                       |
+    |                                                                                             |
+    | def get_name_and_age(json_dict):                                                            |
+    |     profile_dict = json_dict['profile']                                                     |
+    |     name = profile_dict['name']                                                             |
+    |     age = profile_dict['age']                                                               |
+    |     return name, age                                                                        |
+    +---------------------------------------------------------------------------------------------+
+
+Refactored/Fixed:
+
+def insert_name_and_age(name, age, json_dict):
+    json_dict['profile'] = {
+        'name': name,
+        'age': age
+    }
+
+def get_name_and_age(json_dict):
+    return json_dict['profile']['name'] , json_dict['profile']['age']
+
+=========================================== PROBLEM 18 ============================================
+
+Setup:
+
+    `ls` is an arbitrary list, and the intention of function `get_valid_entries()` is to return
+    a list of the entries in `ls` that are valid.
+
+Original:
+
+    +---------------------------------------------------------------------------------------------+
+    | def get_valid_entries(ls):                                                                  |
+    |     for entry in ls:                                                                        |
+    |         if not is_valid(entry)                                                              |
+    |             ls.remove(entry)                                                                |
+    |     return ls                                                                               |
+    +---------------------------------------------------------------------------------------------+
+
+Refactored/Fixed:
+
+def get_valid_entries(ls):
+    return [entry for entry in ls if is_valid(entry)]

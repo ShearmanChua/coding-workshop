@@ -1,0 +1,42 @@
+Written Assignment 2
+1) <challenge name>
+
+  - timed out cos did not use buffered writer (<my name>)
+
+2) <challenge name>
+  - did not use std API, wrote own suboptimal algo (<tutor name>)
+
+
+3) <challenge name>
+
+  - did not read the requirement carefully (<peer reviewer name>)
+
+4) <challenge name>
+
+  - did not cater for the case of n=1 (<my name>)
+  - had unnecessary boundary checks (<reviewer name>)
+
+5) <challenge name>
+
+  - looped from index till n, instead of n-1 (<my name>)
+  - did not cater for m<0 (<peer reviewer name>)
+
+6) pair programming challenge
+  - learnt new API from my pair
+  - learnt how to simplify code / regex
+  - pair helped find edge cases
+
+---------------------------------------
+Written Assignment 3
+
+Found for <name> and findings accepted as improvements
+
+1) <challenge name>
+
+  - renamed variable u to userid
+  - refactored code into function calls
+  - spotted off-by-one bug
+
+
+
+
