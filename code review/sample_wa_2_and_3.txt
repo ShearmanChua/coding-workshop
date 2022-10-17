@@ -1,42 +1,58 @@
 Written Assignment 2
-1) <challenge name>
+1) Closest dates
 
-  - timed out cos did not use buffered writer (<my name>)
+  - Self-found mistake: Did not check if smallest_delta(smallest absolute difference (in days) between any 2 dates) which was initialized as None,
+   was None or interger value before printing out 
 
-2) <challenge name>
-  - did not use std API, wrote own suboptimal algo (<tutor name>)
+  relection: Be careful when initializing variables as 'None' as if no check was done to determine if the variable is None, it might 
+  cause the program to error out.
 
+2) Angle Within
+  - self-found mistake: Did not check that (negative number)% 360 returns a positive number, which led to wrong code fixing directions which led to 
+  more submissions
 
-3) <challenge name>
+  Reflection: Run more test cases and if required, check the output after applying functions to ensure that the behavior of the function is what is 
+  expected.
 
-  - did not read the requirement carefully (<peer reviewer name>)
+3) Closest dates
 
-4) <challenge name>
+  - fitting too many conditional statements into list comprehension (Andrea Chua)
 
-  - did not cater for the case of n=1 (<my name>)
-  - had unnecessary boundary checks (<reviewer name>)
+  Reflection: Make code more readable by wrapping conditional statements for list comprehension into a function instead and check each element against
+  the function, and naming the function in a comprehensible way to allow others to understand what is the purpose of the function. 
 
-5) <challenge name>
+4) pair programming (Log Line)
 
-  - looped from index till n, instead of n-1 (<my name>)
-  - did not cater for m<0 (<peer reviewer name>)
+  - did not cater for the case of variable inside function call(e.g. function(a)) and case of "logger.debug("test"); //logger.debug("test");"
 
-6) pair programming challenge
-  - learnt new API from my pair
-  - learnt how to simplify code / regex
-  - pair helped find edge cases
+  Reflection: jot down all imaginable possible edge cases on a paper or .txt file and test them all, in order to catch as many of them as possible
+
+5) pair programming challenge
+
+  - learn to create regex faster from peer using https://regex-generator.olafneumann.org/
+  - pair programming allows the us to think of more edge cases faster, and spot mistakes quicker
+
+6) how to improve code solutions (in general)
+  - sometimes it may be faster to do a simple string check than to always apply regex
+  - coding/writing out the functions required to solve the problem will allow you to come up with the solutions faster and in a more systematic way
+  - breaking conditional statements into smaller parts may allow the code to be more readable and allow you to better spot if your conditions miss 
+  out any edge cases
 
 ---------------------------------------
 Written Assignment 3
 
-Found for <name> and findings accepted as improvements
+Found for Andrea Chua and findings accepted as improvements
 
-1) <challenge name>
+1) Test Date
 
-  - renamed variable u to userid
-  - refactored code into function calls
-  - spotted off-by-one bug
+  - changed if all_digits == False: into if not all_digits:
+  - line 36: elif row != 1: #pylint: Unnecessary "elif" after "continue", remove the leading "el" from "elif" (no-else-continue)
+  - remove unused import
 
 
+Found for Benjamin Loo and findings accepted as improvements
 
+1) Angle Within
+  - c = c + 360 to c += 360
+  - if b <= a <= c: to if a in range(b,c+1)
 
