@@ -45,14 +45,14 @@ Found for Andrea Chua and findings accepted as improvements
 
 1) Test Date
 
-  - changed if all_digits == False: into if not all_digits:
-  - line 36: elif row != 1: #pylint: Unnecessary "elif" after "continue", remove the leading "el" from "elif" (no-else-continue)
-  - remove unused import
+  - pylint: changed if all_digits == False: into if not all_digits:
+  - pylint: line 36: elif row != 1: #pylint: Unnecessary "elif" after "continue", remove the leading "el" from "elif" (no-else-continue)
+  - pylint: remove unused import
 
 
 Found for Benjamin Loo and findings accepted as improvements
 
 1) Angle Within
-  - c = c + 360 to c += 360
+  - pylint: c = c + 360 to c += 360
   - if b <= a <= c: to if a in range(b,c+1)
 
