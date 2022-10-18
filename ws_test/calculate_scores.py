@@ -48,6 +48,8 @@ class Team:
         self.total_score += bonus_points
         if self.first_accepted_submission == None and first_submission:
             self.first_accepted_submission = submission_position
+            return first_submission
+        return False
     def calculate_total_score(self):
         for challenge in self.challenges.keys():
             self.total_score += self.challenges[challenge].highest_score
@@ -57,48 +59,33 @@ class Team:
 
 teams = {}
 submission_position = 0
+first_submission_teams = []
+first_accepted_submission_teams = []
 
 for submission in stdin.readlines():
     submission_list = submission.strip().split(",")
     team =  submission_list[0]
     if team not in teams.keys():
         teams[team] = Team(team,submission_position)
-    teams[team].make_submission(submission_position, float(submission_list[1]), submission_list[2], submission_list[3], submission_list[4])
+        first_submission_teams.append(team)
+    first_accepted_submission = teams[team].make_submission(submission_position, float(submission_list[1]), submission_list[2], submission_list[3], submission_list[4])
+    if first_accepted_submission:
+        first_accepted_submission_teams.append(team)
+        first_submission_teams.remove(team)
     submission_position += 1
 
 team_points = []
 team_ranking = []
 
+rank_by_submission = first_accepted_submission_teams + first_submission_teams
+no_of_teams = len(rank_by_submission)
+
 for team in teams.keys():
     points = teams[team].calculate_total_score()
-    pos_to_insert = bisect.bisect(team_points, points)
+    pos_to_insert = bisect.bisect(team_points, (points,no_of_teams-rank_by_submission.index(team)))
 
-    if points not in team_points:
-        team_points.insert(pos_to_insert,points)
-        team_ranking.insert(pos_to_insert,teams[team].team_name)
-    else:
-        team_to_compare = teams[team_ranking[pos_to_insert-1]]
-        
-        if team_to_compare.first_accepted_submission != None and teams[team].first_accepted_submission != None:
-            if team_to_compare.first_accepted_submission < teams[team].first_accepted_submission:
-                team_points.insert(pos_to_insert-1,points)
-                team_ranking.insert(pos_to_insert-1,teams[team].team_name)
-            else:
-                team_points.insert(pos_to_insert,points)
-                team_ranking.insert(pos_to_insert,teams[team].team_name)
-        elif team_to_compare.first_accepted_submission == None and teams[team].first_accepted_submission != None:
-            team_points.insert(pos_to_insert,points)
-            team_ranking.insert(pos_to_insert,team.team_name)
-        elif team_to_compare.first_accepted_submission != None and teams[team].first_accepted_submission == None:
-            team_points.insert(pos_to_insert-1,points)
-            team_ranking.insert(pos_to_insert-1,teams[team].team_name)
-        else:
-            if team_to_compare.first_submission < teams[team].first_submission:
-                team_points.insert(pos_to_insert-1,points)
-                team_ranking.insert(pos_to_insert-1,teams[team].team_name)
-            else:
-                team_points.insert(pos_to_insert,points)
-                team_ranking.insert(pos_to_insert,teams[team].team_name)
+    team_points.insert(pos_to_insert,(points,no_of_teams-rank_by_submission.index(team)))
+    team_ranking.insert(pos_to_insert,teams[team].team_name)
 
 for idx, team in enumerate(reversed(team_ranking)):
     print("{},{},{:0.2f}".format(idx+1,team,teams[team].total_score))
