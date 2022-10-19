@@ -123,9 +123,9 @@ def check_inside(polygon, point_to_check, line_to_check):
             # print(side.p1.x,side.p1.y,side.p2.x,side.p2.y)
             # print("intersect")
             if direction(side.p1, point_to_check,side.p2) == 0:
+                print("direction")
                 return on_line(side,point_to_check), "on line"
             intersect_count += 1
-            return (intersect_count%2 != 0), "inside"
 
     return (intersect_count%2 != 0), "inside"
 
@@ -170,6 +170,9 @@ for vehicle in vehicles:
             break
     
     print(output)
+
+
+
 
 
 
